@@ -1,0 +1,134 @@
+/* Do not change these lines */
+h1,h2,h3,font{line-height:normal;}
+.PageTitle,.ProductTableHeader,.ProductTitle,.ProductPriceIntro,.ProductNumber,.ProductOptionName,.ProductChoiceName,.ProductDeliveryAdvice,.WebsiteName,.Breadcrumbs{line-height:normal;}
+/* bullet points image left */
+.PageIntroduction ul, .PageDescription ul, .ProductIntroduction ul, .ProductDescription ul, .ProductDetailedDescription ul { clear:left; }
+.PageIntroduction ol, .PageDescription ol, .ProductIntroduction ol, .ProductDescription ol, .ProductDetailedDescription ol { clear:left; }
+td.idx1MouseOver a {background-color:transparent;}
+td.idx2MouseOver a {background-color:transparent;}
+td.idx1SubMouseOver a {background-color:transparent;}
+td.idx2SubMouseOver a {background-color:transparent;}
+td.idx1Sub a {background-color:transparent;}
+td.idx2Sub a {background-color:transparent;}
+.idx1List > li > a + ul {display:none;}
+.idx2List > li > a + ul {display:none;}
+
+/* fix clear items on product loops */
+.ProductCopyClear { clear:both; height:1px; }
+ .ProductCopyClear span { display:none; }
+.ViewbasketCheckOut {padding:10px;}
+input.Button, input.Radio, input.CheckBox { margin:0; padding:0; }
+
+.SubClear{clear:both;height:1px;}
+.SubClear span{display:none;}
+
+.Dialog, .ShipDialog {background-image:none;}
+
+.ProductIcons .ImgLink {display:block;}
+
+option, button {font-family:inherit;}
+
+/* Start: Print rules -- Delete rules to enable printing everything on website */
+@media print {
+	body {background-color:#ffffff ! important;background-image:none ! important;}
+	html, body, #WebSite, #WebSiteHeader, #WebSiteContent, #WebSiteContent, #DesignImage1, .WebSiteFootnote, #SideBar_L, #Content, #PageContainer10, #PageContainer1 {width:auto ! important;height:auto ! important;float:none ! important;margin:0;overflow:visible ! important;}
+	#WebSite {border:0;position:relative;left:auto;top:auto;right:auto;bottom:auto;}
+	#Content {position:relative;left:auto;right:auto;}
+	#WebSiteHeader * {display:none;}
+	#CompanyImageSiteHeadingContainer, #SiteHeadingContainer, #SiteHeadingContainer a, .SiteHeading, #SiteHeading {position:relative;width:auto;height:auto;top:0;left:0;margin:0;padding:0;display:block;background:#ffffff ! important;color:#000000 ! important;}
+	#SiteHeadingContainer {float:none;height:auto;background:#ffffff ! important;color:#000000 ! important;}
+	#SiteHeading {float:none;padding:0 10px;font-size:26px;line-height:45px;background:#ffffff ! important;color:#000000 ! important;}
+	#SideBar_L, #WebSiteFooter, .PageLinkBox, #AppLogo, #ddSitemapLink, #SwitchCurrency, #Index1, #Index2, #Search, #WebSite > #DesignImage1 {display:none ! important;}
+	.Product, .Product div,  .Product td {page-break-inside:avoid;}
+}
+/* End: Print rules */
+
+.sidr{visibility:hidden;position:fixed;top:0;height:100%;width:100%;z-index:999999;overflow-x:auto;overflow-y:auto;}
+.sidr-open .sidr{visibility:visible;}
+.sidr.sidr-right{left:auto;right:-100%;}
+.sidr.sidr-left{left:-100%;right:auto;}
+.sidr ul li{line-height:1.8em;}
+.sidr ul li:hover,.sidr ul li.active,.sidr ul li.sidr-class-active{line-height:1.8em;}
+
+
+/* HTML templating mechanism used in utils.html and PHPWidgets */
+.tmpl {display:none;}
+.hide {display:none;}
+.marker {display:none!important;}
+.mobileBox {overflow:hidden!important;}
+.mobile-xor {display:none;}
+.mobile {display:none;}
+.mobile-portrait {display:none;}
+.mobile-landscape {display:none;}
+.tablet {display:none;}
+.tablet-portrait {display:none;}
+.tablet-landscape {display:none;}
+.desktop {display:inherit;}
+.desktop-xor {display:none;}
+.footer.mobile #mobile_switchview {font-size:1.2em;}
+@media all and (max-width:768px){
+	.desktop-xor {display:inherit;}
+}
+.ImgLink img{display:block;}
+
+.sf-button {display:inline-block;text-decoration:none;font-size:1.2em;line-height:1.2em;border-style:solid;border-width:1px;padding:.4em .7em;cursor:pointer;-moz-transition:opacity .3s;-webkit-transition:opacity .3s;transition:opacity .3s;}
+.sf-button:hover {opacity:.7;}
+.sf-button a {display:block;}
+.sf-button .ImgLink {background-color:transparent;}
+.sf-button .ImgLink [class^='icon-'] {font-size:1.2em;margin:0 5px 0 0;}
+.sf-button-glass {font-weight:bold;border-style:solid;border-width:1px;background-color:transparent;border-radius:.25em!important;}
+
+/*  grid columns  */
+.vcenter {position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
+.section {clear:both;padding:0px;margin:0px;}
+.group:before, .group:after {content:"";display:table;}
+.group:after {clear:both;}
+.group .left {float:left;}
+.group .right {float:right;}
+.col {display:block;float:left;margin:1% 1.2% 1% 0;}
+.col:last-child {margin-right:0;}
+.col.left {float:left;}
+.col.right {float:right;}
+.span_2_of_2 {width:100%;}
+.span_1_of_2 {width:49.2%;}
+.span_3_of_3 {width:100%;}
+.span_2_of_3 {width:66.13%;}
+.span_1_of_3 {width:32%;}
+.span_4_of_4 {width:100%;}
+.span_3_of_4 {width:74.6%;}
+.span_2_of_4 {width:49.2%;}
+.span_1_of_4 {width:23.8%;}
+
+html[dir="rtl"] .idx1List, html[dir="rtl"] .idx2List {float:left;display:inline;}
+html[dir="rtl"] #WebSiteContent, html[dir="rtl"] #WebSiteContent *:not([class*=icon-]):not([class*=ProductImage]):not(img) {text-align:right;left:0;}
+html[dir="rtl"] #WebSiteHeader, html[dir="rtl"] #WebSiteHeader *:not([class*=icon-]) {text-align:right;left:0;}
+html[dir="rtl"] .mobile.header .sf-button {float:left;}
+html[dir='rtl'] #pmethodContainer input[type=radio] {float:right !important;right:0px;}
+html[dir='rtl'] #pmethodContainer input[type=radio] + label {float:right;margin-right:2.5em;margin-left:0px !important;}
+
+[id][class] .is-box {overflow:hidden;}
+[id][class] .is-box .is-boxes {min-height:0;}
+[id^=Index] .is-hidden {display:block!important;}
+
+ul.media-share > li > a[class^=icon-] {margin-bottom:8px;}
+
+.cross-icon-1234 {position:absolute;top:50%;right:38px;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:999;cursor:pointer;}
+.cross-icon-1234 .icon-cross { font-weight:100;font-size:11px;line-height:1;color:#2b2b2b;}
+#Search .SearchTextField {padding-right:25px;}
+input.SearchTextField ~ [class*=cross-icon-] {opacity:0.6;}
+input::-ms-clear {display:none;}
+svg {fill:currentColor;}
+
+/*
+Version tag, please don't remove
+$Revision: 44165 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V14_60/SFEditor/res/html/global-main.css $
+*/
+
+
+
+/*
+Version tag, please don't remove
+$Revision: 34675 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V14_60/bin/Common%20Files/parseLang/global.css $
+*/

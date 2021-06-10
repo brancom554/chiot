@@ -1,0 +1,84 @@
+#ProductLoop {position:relative;overflow:hidden;clear:both;text-align:center;}
+#ProductLoopInner {position:relative;overflow:hidden;margin:0 auto;padding:10px 0;}
+
+
+/* Layout */
+.Product {position:relative;clear:none ! important;margin:0 0 15px 0;position:relative; border: 0; padding: 0 0 10px; border-bottom-style: dotted; border-bottom-width: 1px;}
+
+.ProductImageGroupContainer {overflow:hidden;display:table-row;}
+.ProductImageContainer {width:160px; float: left;margin:0 0 0 0;}
+.ProductImageContainer .ImgLink {float:none!important;}
+.ProductImage {position:relative;vertical-align:top;text-align:center; float: left; width: auto;}
+@-moz-document url-prefix() {
+	.ProductImage {width:100%!important;}
+}
+.ProductImage img {position:relative;border:0;margin:0 auto;display:block;max-width:150px;max-height:200px;width:auto;height:auto;}
+.NoImage .ProductImage {min-height:130px;}
+.NoImage .ProductImage [class^='icon-'] {min-height:1px;vertical-align:middle;position:absolute;margin-left:-12px;left:50%;margin-top:-12px;top:50%;opacity:0.3;filter:alpha(opacity=30);}
+ .ProductImageCaptionIcons {height:18px;}
+ .ProductImageCaptionIcons div {display:inline;float:right;}
+ .ProductImageCaption {line-height:12px;font-size:0.625em;padding:2px;}
+ .ProductImageCaptionIcon.Icon {opacity:0.3;filter:alpha(opacity=30);}
+
+/* More details */
+.ProductMoreDetails {font-weight:bold;padding:0;margin:8px 0 0 0;line-height:16px; font-size: 0.875em;}
+.ProductMoreDetails a {color:inherit;background-color:transparent;margin:0 10px;line-height:36px;}
+.ProductMoreDetails.no-style {display:inline-block;padding:5px 0;margin:0;line-height:normal;height:auto;border:none; font-size: initial;}
+.ProductMoreDetails.no-style a {text-decoration:underline;color:inherit;background-color:transparent;margin:0;display:block;line-height:normal;font-weight:normal; font-size: initial;}
+
+/* Discount */
+.ProductContainer1{position:relative;font-size:0.8125em;font-weight:bold;padding:0 10px 0 0; float: left;}
+.Product .ProductContainer1 div {vertical-align:middle; display: inline;}
+
+/* Product title */
+.ProductTitle{position:relative;margin:0 0 10px 0; word-wrap: break-word; line-height:1.25em;display: inline; word-wrap: break-word; float: left; width: 100%;}
+.ProductIntroduction {padding:0;text-align:left;font-weight:normal;overflow:hidden; float: left; width: 100%;}
+.ellipsis, .ellipsis > p {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+.ProductNumber {position:relative;overflow:hidden;padding:3px 0;text-align:left;}
+
+/* Product pricing */
+.ProductPriceContainer {position:relative;min-height:1px; float: left;}
+.ProductContainer2 {min-height:1px;vertical-align:bottom;display:inline-block;}
+.Product .ProductContainer2 .ProductIcons + .ProductMoreDetails {position:static;float:left;}
+
+.ProductPriceOriginal {margin-right:5px;display:inline-block;float:none;text-decoration:line-through;line-height:20px;font-size:0.8125em;}/* old price */
+.ProductPrice {clear:left;font-size:0.8125em;font-weight:bold;display:inline-block;} /* current price */
+.ProductPriceCalculated {font-size:0.8125em;font-weight:bold;display:inline-block;} /* discounted price */
+.ProductCurrencySymbol {font-size:.7em;vertical-align:baseline;}
+.ProductPriceOtherInformation {line-height:1.5em;font-size:0.625em;display:inline;}
+.ProductPriceOtherInformation *:empty {display:none;}
+.ProductPriceOtherInformationPart * {white-space:nowrap;}
+.ProductPriceOtherInformationPart::before {content:"|";margin-right:4px;display:inline;}
+:nth-of-type(1).ProductPriceOtherInformationPart::before {content:"";display:none;}
+.ProductPriceOtherInformation .ProductIncTaxes {display:inline-block;}
+.ProductPriceOtherInformation .ProductIncTaxes:empty {display:none;}
+.ProductPriceOtherInformation .ProductPriceTax {clear:left;display:block;}
+.ProductIncTaxes + .ProductWeight::before, .ShippingChargeForProduct + .ProductWeight::before {content:"("!important;display:inline-block!important;margin-right:0;}
+.ProductIncTaxes + .ProductWeight::after, .ShippingChargeForProduct + .ProductWeight::after {content:")";}
+.ProductDiscountMessage {font-weight:normal;margin:5px 10px;padding:2px;}
+.ProductPriceOriginal:empty, .ProductPrice:empty, .ProductPriceCalculated:empty  {display:none;}
+
+/* Buttons */
+.ProductContainer3 {padding:0; float: left; width: 100%;}
+.ProductIcons {max-width:450px;}
+.QntyBox input {font-size:0.9375em;}
+.ProductQuantityUnit {font-size:.75em;}
+.AddToBasketQnty {border-width:1px;border-style:solid;}
+.AddToBasketButton {font-size:0.75em;font-weight:bold;border-style:solid;border-width:1px;}
+.AddToBasketButton .ImgLink [class^='icon-'] {font-size:1.2em;}
+.FavoritesButton {font-size:1em;font-weight:bold;border-style:solid;border-width:1px;}
+
+#ProductLoopInner .Product .ProductImageContainer .ImgLink, .ProductImageContainer div{transform: translateY(0px);-webkit-transform: translateY(0px);-moz-transform: translateY(0px);}
+.product-details-right{float: right; width: calc(100% - 160px);}
+#ProductLoopInner{margin: 0 auto !important; padding: 0; float: none; }
+
+.ProductContainerClear {clear:both;height:1px;}
+.ProductContainerClear span {display:none;}
+.product-price-special{float: left; width: 100%; padding: 0 0 0;}
+
+/*
+Version tag, please don't remove
+$Revision: 44528 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V14_50/bin/SFXTemplates/ProductLoops/SFX-EMA_1/stylesheet.css $
+*/

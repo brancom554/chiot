@@ -1,0 +1,49 @@
+#PageContainer11 {position:relative;width:100%;margin-bottom: 30px;}
+#PageContainer1 {position:relative;}
+#PageContainer3 {position:relative;clear:right;}
+
+.PageImage {margin:10px 0 10px 10px;float:right;border-width:0px;border-style:solid;}
+.PageImageCaption { text-align:right;padding:0 3px;}
+
+
+.PageTitle {font-size:1.875em;font-weight:normal;line-height:1.2em;word-wrap:break-word;border-width:0px;text-align: left;}
+.PageIntroduction {font-size:1.125em;line-height:1.5em;word-wrap:break-word;font-weight:normal;position: relative; font: bold 16px 'Open Sans', sans-serif , Arial, Helvetica, Tahoma !important; }
+.PageIntroduction a {text-decoration:underline;}
+.PageDescription {font-size:1em;margin:5px 5px 0 0;padding:.25em 0;line-height:1.5em;word-wrap:break-word;border-width:0px;border-style:solid;}
+.PageDescription a {text-decoration:underline;}
+.PageDescription p{font-family: arial; }
+
+.Product { clear:both;}
+
+/* Page html code */
+.PageCodeTop, .PageCodeBottom {padding:10px;}
+.PageCodeSnippetArea1, .PageCodeSnippetArea2, .PageLinkBoxTop, .PageLinkBoxBottom {margin:5px;}
+#DesignImage2 {max-width: 100% !important;}
+
+/* Start SiteMap */
+.ddSitemapLink{position:relative;padding:0 5px;cursor:pointer;font-size:0.5625em;background-color:transparent;color:#7c7c7f;}
+.ddSitemapMenu{position:absolute;visibility:hidden;left:0;top:0;width:200px;height:150px;padding:0px 5px;border:1px solid #000000;overflow:scroll;overflow-x:hidden;z-index:999;background-color:#ffffff;text-align:left;}
+.ddSitemapMenu a,.ddSitemapMenu div{color:#000000;}
+.ddSitemapMenu hr{position:relative;width:200px;height:1px;}
+.ddSitemapItem{display:block;padding:0px 10px;text-decoration:none;width:190px;}
+#ddSFLink{position:relative;text-align:right;top:-12px;}
+#ddSFLinkSep{width:86%;}
+/* End SiteMap */
+
+@media all and (min-width:1025px) and (max-width:1240px){
+    .ThemeVersion-11 #DesignImage2{max-width:100% !important;}
+}
+@media all and (min-width:768px) and (max-width:1024px){
+    .ThemeVersion-11 #DesignImage2{max-width:100% !important;}
+}
+@media all and (max-width:767px){
+
+}
+@media all and (max-width:635px){
+}
+
+/*
+Version tag, please don't remove
+$Revision: 39224 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V12_00/bin/SFXTemplates/Themes/SFX-SHO-001_nemoW/Pages/SFX-Home_1/stylesheet.css $
+*/

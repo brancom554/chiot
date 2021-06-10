@@ -1,0 +1,401 @@
+<html>
+
+<!-- Mirrored from www.chiot-a-vendre.fr/contents/extra.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Jun 2021 13:06:52 GMT -->
+<head >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+<script>
+var tf=parent.tf,d=document;
+var forceAllLang=false;
+var loadInProgress=-1;
+var arrIFrame=[];
+function loadExecute(url,id,isLang,force) {
+if (!d.createElement) {return true};
+if(typeof(isLang)=='undefined'||!isLang)isLang=false;
+if (!arrIFrame[id]) {
+if (!d.getElementById(id)) {
+var iframe=document.createElement('iframe');
+iframe.name=id;
+iframe.id=id;
+arrIFrame[id] = d.body.appendChild(iframe);
+}
+else{
+arrIFrame[id] = d.getElementById(id);
+}
+if (d.frames) {
+arrIFrame[id] = d.frames[id];
+}
+if(window.opera){
+setTimeout('loadLoad("'+url+'","'+id+'",'+isLang+')',10);
+return false;
+}
+loadLoad(url,id,isLang);
+}
+else if(tf.arrObj[id]&&!forceAllLang){
+var doc=getDoc(arrIFrame[id]);
+loadCallback(doc,id);
+}
+else if(force||(forceAllLang&&tf.arrObj[id])){
+loadLoad(url,id,isLang);
+}
+if(id=='lang'&&tf.isInSFull())wxecamtb2();
+return false;
+}
+function loadLoad(url,id,isLang){
+if (tf.arrObj[id]) {
+if (loadInProgress == -1) loadInProgress+=2;
+else loadInProgress++;
+}
+try{
+var doc=getDoc(arrIFrame[id]);
+doc.location.replace(tf.wm.url(url,tf.lmd[id]?tf.lmd[id]:'-',isLang));
+} catch(e) {}
+}
+function getDoc(o){
+var doc;
+if(o.document){doc=o.document;} // For IE5 and Opera
+else if(o.contentDocument){doc=o.contentDocument;} // For NS6
+else if(o.contentWindow){doc=o.contentWindow.document;} // For IE5.5 and IE6
+return doc;
+}
+function loadCallback(doc,id) {
+var el=tf.arrObj[id];
+try{
+var s=doc.body.innerHTML,tfc=tf.content,tfcd=tfc.document;
+if(!tfc.location.href.match(/contents\/.*\/.*(\.html|\.php)/)){
+s=s.replace(/\.\.\/media/g,(tf.lang!=tf.baseLang?'../':'')+'contents/media');
+}
+var css=s.match(/<sf:style.*?>(([\n\r]|.)*?)<\/sf:style>/);
+if(css){
+css=css[1];
+try{
+// IE
+tfcd.getElementById('sf-load-css').styleSheet.cssText+=css;
+}
+catch(e){
+var oNewStyle=tfcd.createElement('style');
+oNewStyle.type='text/css';
+var tag=tfcd.getElementById('sf-load-css'),tagStyles=tag.getElementsByTagName('STYLE');
+try{
+// FF
+oNewStyle.innerHTML=css;
+tag.insertBefore(oNewStyle, tagStyles[tagStyles.length-1]);
+}
+catch(e){
+// Safari, Chrome, Opera
+tagStyles[0].insertAdjacentHTML('beforeBegin','<style>'+css+'</style>');
+}
+}
+s=s.replace(/<sf:style.*?>([\n\r]|.)*?<\/sf:style>/g,'');
+}
+el.innerHTML=s;
+}catch(e){}
+if(loadInProgress>0)loadInProgress--;
+}
+function reloadCallbacks(){
+for(var id in arrIFrame){
+if(id.match(/holder$/))
+{
+try{
+arrIFrame[id].location.reload();
+}
+catch(e){}
+}
+}
+}
+function wxecamtb2(){
+var tfc=tf.content,tfcd=tfc.document;
+var bReady=(tfcd.readyState=='complete'&&!tfc.specialLoading);
+var a=tfcd.getElementsByTagName('OBJECT');
+for(var n=0;n<a.length;n++){bReady=(!a[n].Playing||a[n].object.ReadyState==4)}
+if(bReady){
+a=tfcd.getElementsByTagName('IFRAME');
+for(var n=0;n<a.length;n++){
+try{bReady=(a[n].readyState=='complete'||a[n].contentDocument.readyState=='complete');}catch(e){}
+}
+}
+if(bReady){
+setTimeout(function(){window.external.extractContentAndMoveToBody('','');}, 10);
+}
+else{setTimeout(wxecamtb2,50);}
+}
+var axdmsg={};
+function xdmsg(url,id,fnRcv,reqid,rcvid){
+this.id=id;
+this.url=url;
+this.reqid=reqid||'_sfping';
+this.rcvid=rcvid||'_sfdata';
+this.fnRcv=fnRcv;
+this.ifr=null;
+this.reqIntervalID=null;
+axdmsg[this.rcvid]=this;
+this.init=function(){
+if(!this.url)return;
+var tfc=tf.content;
+if(!tfc.document.getElementById(this.id)) {
+var iframe=tfc.document.createElement('iframe');
+iframe.name=this.id;
+iframe.id=this.id;
+iframe.style.display='none';
+this.ifr=tfc.document.body.appendChild(iframe);
+}
+else{
+this.ifr=tfc.document.getElementById(this.id);
+}
+if(this.ifr) {
+try{
+var doc=(tf.isInDesigner()||tf.isIE5||tf.isIE6||tf.isIE7||tf.isIE8||tf.isIE9?this.ifr.contentWindow.document:getDoc(this.ifr));
+doc.location.replace(this.url);
+} catch(e) {}
+this.ifr.src=this.url;
+tf.addEvent("onmessage", this.rcvData);
+this.reqData();
+}
+},
+this.rcvData=function(e) {
+e=e||window.event();
+if (e.data && !e.data.split) return;
+var data=e.data.split('|'),meme=null;
+if (axdmsg[data[0]])meme=axdmsg[data[0]];
+if (meme) {
+clearInterval(meme.reqIntervalID);
+var myxml=data[1].replace(/<([^>]*?)>/g,function($0, $1){
+var s=$1;
+return '<'+s.toLowerCase()+'>';
+});
+if(meme.fnRcv)meme.fnRcv(myxml);
+}
+},
+this.reqData=function() {
+var meme=this;
+this.reqIntervalID = setInterval(function () {
+if (meme.ifr && meme.ifr.src.indexOf('http')==0)
+meme.ifr.contentWindow.postMessage(meme.reqid+'|' + tf.content.document.location.href, meme.ifr.domain||meme.ifr.src);
+}, 1000);
+}
+};
+</script>
+<style type="text/css">
+.tmpl{display:none;}
+</style>
+</head>
+<body bgcolor="transparent">
+<script>tf.xLoaded=true;</script>
+<iframe id="price" name="price" src="about:blank"></iframe>
+<iframe id="globecharge1" name="globecharge1" src="about:blank"></iframe>
+<iframe id="globecharge2" name="globecharge2" src="about:blank"></iframe>
+<iframe id="reseller" name="reseller" src="about:blank"></iframe>
+<iframe id="mid" name="mid" src="about:blank"></iframe>
+<script type="text/template" id="tmplSFLightBoxOverlay" class="tmpl">
+<![CDATA[
+<div id="sfLightBoxOverlay" class="__className__" onclick="__close_onclick__" style="position:fixed;background-color:#444444;left:0;top:0;width:100%;height:__height__;opacity:0.8;filter:alpha(opacity=80);z-index:100000;"></div>
+__contents__
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBoxFrame" class="tmpl">
+<![CDATA[
+<iframe name="sfPopupFrame" id="sfPopupFrame" src="__src__" width="100%" __height__ frameborder="0" border="0" unselectable="on" onload="__onload__" style="display:block;" allowfullscreen></iframe>
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBoxHTMLCode" class="tmpl">
+<![CDATA[
+__HTML__
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBoxImage" class="tmpl">
+<![CDATA[
+<img __wide__ class="CenterVertical" src="__src__" index="__index__" border="0" onload="__onload__" />
+</script>
+<script type="text/template" id="tmplSFLightBoxImageControls" class="tmpl">
+<div id="sfLightBoxNavLeft" onclick="__prev_onclick__"><div id="sfLightBoxNavLeftInner" class="icon-arrow-left3 icon-fa-inverse vcenter"></div></div>
+<div id="sfLightBoxNavRight" onclick="__next_onclick__"><div id="sfLightBoxNavRightInner" class="icon-arrow-right3 icon-fa-inverse vcenter"></div></div>
+<style type="text/css">
+#sfLightBoxNavLeft {display:__navdisplay__;visibility:__prev_visible__;position:absolute;top:24px;left:0;margin-top:__decorationborder__;height:__height__;width:50%;background:url(http://www.chiot-a-vendre.fr/contents/__relprefix__media/trans.gif) left center no-repeat;cursor:pointer;}
+#sfLightBoxNavLeftInner {display:none;}
+#sfLightBoxNavLeft:hover #sfLightBoxNavLeftInner {display:block;font-size:3em;position:absolute;left:0;display:block;width:.8em;height:1em;line-height:1em;background-color:rgba(64,64,64,0.6);border-top-right-radius:10px;border-bottom-right-radius:10px;padding:15px 5px;}
+#sfLightBoxNavRight {display:__navdisplay__;visibility:__next_visible__;position:absolute;top:24px;right:25px;margin-top:__decorationborder__;height:__height__;width:50%;background:url(http://www.chiot-a-vendre.fr/contents/__relprefix__media/trans.gif) left center no-repeat;cursor:pointer;}
+#sfLightBoxNavRightInner {display:none;}
+#sfLightBoxNavRight:hover #sfLightBoxNavRightInner {display:block;font-size:3em;position:absolute;right:-26px;display:block;width:.8em;height:1em;line-height:.95em;background-color:rgba(64,64,64,0.6);border-top-left-radius:10px;border-bottom-left-radius:10px;padding:15px 5px;}
+.CenterVertical { position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%); }
+</style>
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBoxFlickity" class="tmpl">
+<![CDATA[
+<div class="LightBoxCarousel">
+<div class="gallery-box">__contents__</div>
+<style type="text/css">
+.LightBoxCarousel {width:100%;margin:0 auto;position:relative;}
+.LightBoxCarousel .gallery-box {clear:both;height:__height__;}
+.LightBoxCarousel .gallery-box .flickity-prev-next-button{background:#eeeeee;background:hsla(0, 0%, 93%, 0.5);-moz-transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out;}
+.LightBoxCarousel .gallery-box .flickity-prev-next-button:hover {background:hsla(0, 0%, 93%, 1);-moz-transition:all 0.2s ease-in-out;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}
+.LightBoxCarousel .gallery-box .flickity-prev-next-button svg{top:34%;left:30%;width:36%;height:36%;}
+.LightBoxCarousel .flickity-page-dots {bottom:auto;top:-28px;z-index:999999;text-align:left;width:calc(100% - 30px);}
+.LightBoxCarousel .flickity-page-dots .dot {width:16px;height:16px;background:#cccccc;opacity:0.5;margin:0 4px;border:1px solid #aaaaaa;}
+.LightBoxCarousel .flickity-page-dots .dot.is-selected {opacity:1;background:#aaaaaa;border:1px solid #999999;}
+.LightBoxCarousel .box {position:relative;width:100%;height:100%;overflow:hidden;text-align:center;}
+.LightBoxCarousel .box a {float:left;width:100%;height:auto;position:relative;}
+.LightBoxCarousel .image {width:auto;max-width:100%;height:100%;max-height:100%;vertical-align:middle;display:block;margin:auto;}
+.LightBoxCarousel .image > img {width:auto;height:auto;max-width:100%;max-height:100%;display:block;margin:auto;top:50%;position:relative;-moz-transform:translateY(-50%);-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+.LightBoxCarousel .image object,.LightBoxCarousel .image embed {max-width:100%;max-height:100%;}
+.LightBoxCarousel .info {display:none;}
+#sfLightBoxTopBar > div:first-child {display:none;}
+</style>
+</div>
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBoxFlickityItem" class="tmpl">
+<![CDATA[
+<div class="box">
+<div class="image">__code__</div>
+<div class="info">
+<div class="title">__title__</div>
+<div class="introduction">__description__</div>
+</div>
+</div>
+]]>
+</script>
+<script type="text/template" id="tmplSFLightBox" class="tmpl">
+<![CDATA[
+<div id="sfLightBox" class="GC41__className__" style="max-height:100%;box-sizing:border-box;position:__position__;left:50%;top:50%;margin-left:__marginleft__;margin-top:__margintop__;z-index:100001;padding:__decorationborder__;__cssborder__">
+<div id="sfLightBoxBody" style="width:__width__;">
+<div id="sfLightBoxTopBar" style="position:relative;top:0px;left:0;margin:0 0 5px 0;height:24px;__displaybottompart__">
+<div style="position:relative;float:left;top:0;right:0;text-align:right;">
+<div style="display:__navdisplay__;"><i onclick="__prev_onclick__" href="#" class="icon-arrow-left3 icon-fa-1-5x" style="visibility:__prev_visible__;cursor:pointer;"></i><span style="margin:0 5px;font-size:1.5em;display:inline-block;vertical-align:bottom;">__index__/__count__</span><i onclick="__next_onclick__" href="#" class="icon-arrow-right3 icon-fa-1-5x" style="visibility:__next_visible__;cursor:pointer;"></i>
+</div>
+</div>
+<div style="position:relative;float:right;top:0;right:0;text-align:right;margin:0 0 5px 0;">
+<i onclick="__close_onclick__" href="#" class="icon-cross2 icon-fa-1-5x" style="cursor:pointer;"></i>
+</div>
+</div>
+<div id="sfLightBoxContents" index="__index__" style="position:relative;width:__width__;height:__height__;overflow:__overflow__;">
+<div id="sfLightBoxLoading" style="display:__loadingdisplay__;position:relative;width:__width__;height:__height__;line-height:__height__;background:#ffffff center center no-repeat;color:#555555;text-align:center;vertical-align:middle;overflow:hidden;">
+<span style="display:inline-block;line-height:normal;vertical-align:middle;"><i class="icon-spinner2 icon-fa-spin" style="margin:auto;font-size:2em;display:block;"></i>__loadingmessage__</span>
+</div>
+<div style="text-align:center;width:100%;height:100%;overflow:hidden;">__contents__</div>
+</div>
+__imagecontrols__
+<div id="sfLightBoxBottomBar" style="position:relative;bottom:0px;left:0;text-align:left;margin:5px 0 0 0;display:__captiondisplay__;__displaybottompart__">
+<div style="font-weight:bold;" class="title">__title__</div>
+<div class="description">__description__</div>
+</div>
+</div>
+</div>
+]]>
+</script>
+<script type="text/template" id="tmplSFItemCountInBasket" class="tmpl">
+<![CDATA[
+<div id="sfItemCountInBasket-__prid__" class="GC14 ItemCountInBasket">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td align="left">__txtItems__: __itemcount__</td><td align="right" style="line-height:1.2em;"><a href="__relprefix__basket.html" class="icon-cart"></a></td></tr></table>
+</div>
+]]>
+</script>
+<script type="text/template" id="tmplSFCookieWarningBar" class="tmpl">
+<![CDATA[
+<style type="text/css">
+.sfCookieWarningBar {position:fixed;width:100%;height:auto;bottom:0;border-style:solid;border-width:1px 0 0 0;padding:0;text-align:center;-webkit-box-shadow:0px 0px 10px 0px #666666;-moz-box-shadow:0px 0px 10px 0px #666666;box-shadow:0px 0px 10px 0px #666666;z-index:99999;box-sizing:border-box;min-height:16%;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.sfCookieWarningBar .content {text-align:left;max-width:600px;position:relative;overflow:hidden;left:0;right:45px;margin:0 auto;padding:10px;align-self:center;}
+.sfCookieWarningBar span {margin:0 0 1em 0;display:block;font-size:15px;}
+.sfCookieWarningBar span+a {margin:0 auto 1em auto;display:block;font-size:14px;text-align:center;text-decoration:underline;margin-left:5px;}
+.sfCookieWarningBar .OK {padding:5px 20px;background-color:rgba(0,0,0,.2);margin:0 auto 10px auto;align-self:center;}
+.sfCookieWarningBar .Close {position:absolute;top:10px;right:10px;border:none;opacity:.7;background-color:transparent;}
+.sfCookieWarningBar button {cursor:pointer;position:relative;display:block;padding:5px;font-weight:bold;text-align:center;font-size:1em;border:none;}
+.sfCookieWarningBar button > * {display:block;text-align:center;margin:0;line-height:1;}
+.sfCookieWarningBar button.Close .icon-cross2 {font-size:13px;}
+#sfCookieWarningBarSpacer {position:relative;overflow:hidden;z-index:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+#sfCookieWarningBarSpacer * {visibility:hidden;}
+@media all and (max-width:768px){
+.sfCookieWarningBar .content {padding-right:40px;}
+}
+/* IE11 */
+@media screen and (-ms-high-contrast: none) {
+.sfCookieWarningBar .content {transform:translateY(35px);margin-top:-35px;margin-bottom:35px;}
+}
+</style>
+<div id="sfCookieWarningBarSpacer" class="sfCookieWarningBar">
+<div class="content"><span>__warningtext__</span><a href="__privacyhref__">__privacypagetitle__</a></div>
+<button class="GC91 OK"><span>__LD_ACCEPT__</span></button>
+<button class="GC43 Close"><i class="icon-cross2"></i></button>
+</div>
+<div id="sfCookieWarningBar" class="GC43 sfCookieWarningBar">
+<div class="content"><span>__warningtext__</span><a href="__privacyhref__">__privacypagetitle__</a></div>
+<button class="GC91 OK"><span>__LD_ACCEPT__</span></button>
+<button class="GC43 Close"><i class="icon-cross2"></i></button>
+</div>
+]]>
+</script>
+<script type="text/template" id="tmplSFCookiePrivacy" class="tmpl">
+<div class="row clearfix sf-cb cookieOptInPrivacy">
+<style>
+.cookieOptInPrivacy .btn-primary input {margin:0 5px;}
+.cookieOptInPrivacy .btn-primary * {vertical-align:text-bottom;}
+</style>
+<div class="column full">
+<div class="display"><h2>__LD_COOKIEPRIVACY_TITLE__</h2></div>
+<p>__LD_COOKIEPRIVACY_DESCRIPTION__</p>
+<p><span class="cookieOptInServices">__servicenames__</span></p>
+<div style="margin:1em 0;">
+<button data-SFCBpermalink="true" class="GC91 btn-primary btn sf-button edit" style="border-radius:50px;"><input type="checkbox" name="OptInOutToggle" />__LD_OPTOUT__</button>
+</div>
+</div>
+<script>
+try	{
+if (typeof($) != 'undefined') {
+if($('[name=optinout]').children().length == 0){
+$('.cookieOptInServices').load(tf.wm.url('http://www.chiot-a-vendre.fr/contents/optinout.html',lmd['optinout'],true)+' #cookieOptInServices');
+}
+$(window).off('cookieOptInApprovedLoaded.cookiewarning').on('cookieOptInApprovedLoaded.cookiewarning', function(){
+if (window['cookieOptInServicesText']) {
+$('.cookieOptInServices').html(window['cookieOptInServicesText']);
+}
+else {
+$('.cookieOptInServices').empty();
+}
+$('[name=OptInOutToggle]').prop('checked', tf.getCookStr('cookieOptInApproved') !== 'true');
+});
+$(window).trigger('cookieOptInApprovedLoaded.cookiewarning');
+$('[name=OptInOutToggle]')
+.prop('checked', tf.getCookStr('cookieOptInApproved') !== 'true')
+.parents('button').off('click.cookiewarning').on('click.cookiewarning', function(e){
+if ($('[name=OptInOutToggle]', e.target).prop('checked')) {
+$('[name=OptInOutToggle]', e.target).prop('checked', false);
+if(tf.cookieWarning.close)tf.cookieWarning.close();
+tf.cookieWarning['_optInApproved']();
+}
+else {
+$('[name=OptInOutToggle]', e.target).prop('checked', true);
+if(tf.cookieWarning.close)tf.cookieWarning.close();
+tf.cookieWarning['_optOut']();
+}
+})
+;
+}
+} catch (e) {}
+</script>
+</div>
+</script>
+<script type="text/template" id="tmplSFPurchaseOverlayContents" class="tmpl">
+<![CDATA[
+<style type="text/css">
+#sfLightBoxOverlay {height:100%!important;}
+#sfPurchaseOverlayContents  {position:fixed;top:50%;margin-top:-50px;width:100%;z-index:100000;}
+#sfPurchaseOverlayContents .sf-button {margin:10px 0;border-radius:5px;box-shadow:0px 0px 20px 1px rgba(255,255,255,0.3);}
+#sfPurchaseOverlayContents .sf-button:hover {box-shadow:0px 0px 20px 2px rgba(32,32,32,0.7);}
+#sfPurchaseOverlayContents .sf-button i {vertical-align:middle;}
+#sfPurchaseOverlayContents .sf-button span {padding:0 0 0 10px;}
+</style>
+<div id="sfPurchaseOverlayContents">
+<div id="Show" class="GC13 sf-button sf-gradient"><i class="icon-new-tab22 icon-fa-2x ImgLink"></i><span>__LD_CHECKOUT_SHORT__</span></div>
+<br/>
+<div id="Edit" class="GC13 sf-button sf-gradient"><i class="icon-pencil3 icon-fa-2x ImgLInk"></i><span>__LD_CHECKBASKET__</span></div>
+</div>
+]]>
+</script>
+</body>
+
+<!-- Mirrored from www.chiot-a-vendre.fr/contents/extra.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Jun 2021 13:06:52 GMT -->
+</html>
+<!--
+Version tag, please don't remove
+$Revision: 45528 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V14_60/bin/Common%20Files/parseLang/extra.html $ -->

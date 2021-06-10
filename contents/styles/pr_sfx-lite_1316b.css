@@ -1,0 +1,166 @@
+#ProductLoop {clear:both;}
+
+/* Major elements */
+.Product {position:relative;overflow:hidden;border-width:0;border-style:solid;margin: 0 15px 30px !important; padding-top: 0.5rem !important; box-sizing: border-box;float: left;clear: none !important;transition: all 0.2s ease-in-out;
+-moz-transition: 0.15s cubic-bezier(0.88, 0.04, 0.43, 0.33);
+    -webkit-transition: 0.15s cubic-bezier(0.88, 0.04, 0.43, 0.33);
+    -o-transition: 0.15s cubic-bezier(0.88, 0.04, 0.43, 0.33);
+    -ms-transition: 0.15s cubic-bezier(0.88, 0.04, 0.43, 0.33);
+    transition: 0.15s cubic-bezier(0.88, 0.04, 0.43, 0.33);
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.Product:hover{-moz-transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+    -o-transform: translate3d(0, -10px, 0);
+    -ms-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+.Product .ProductIntroduction {margin:0 0 20px 0;font-size:1em;}
+.Product .ProductIntroduction span{white-space: normal !important;}
+.Product .ProductIntroduction p {margin: 0;}
+
+/* Dimensions */
+.Product {}
+.Product a[href] {overflow:hidden;}
+.ProductImageGroupContainer, .ProductImage {}
+
+/* Layout */
+.Product {position:relative;float:left;clear:none ! important;margin:0 15px 30px 15px;position:relative;text-align:left;}
+
+.ProductImageGroupContainer {overflow:hidden;display:table-row;}
+.ProductImageContainer {width:auto!important;margin:0 0 5px 0; padding-bottom: 10px; transition: all 0.5s ease-in-out; border-bottom-width: 1px; border-bottom-style: solid;}
+.ProductImageContainer > * {position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
+.ProductImageContainer .ImgLink {float:none!important;}
+.ProductImage {position:relative;vertical-align:top;text-align:center;}
+.ProductImage img {position:relative;border:0;margin:0 auto;display:block;}
+.NoImage .ProductImage {min-height:130px;}
+.NoImage .ProductImage [class^='icon-'] {min-height:1px;vertical-align:middle;position:absolute;margin-left:-12px;left:50%;margin-top:-12px;top:50%;opacity:0.3;filter:alpha(opacity=30);}
+ .ProductImageCaptionIcons {height:18px;}
+ .ProductImageCaptionIcons div {display:inline;float:right;}
+ .ProductImageCaption {line-height:12px;font-size:0.625em;padding:2px;}
+ .ProductImageCaptionIcon.Icon {opacity:0.3;filter:alpha(opacity=30);}
+
+/* More details */
+.ProductMoreDetails {font-size:0.875em;font-weight:bold;padding:0;margin:8px auto 0 auto;line-height:16px;height:36px;min-height:36px;border-style:solid;border-width:1px;text-align:center;max-width:300px;width:80%;}
+.ProductMoreDetails a {color:inherit;background-color:transparent;padding:0 10px;line-height:36px;display:inline-block;}
+.ProductMoreDetails.no-style {display:inline-block;font-size:inherit;padding:5px 0;margin:0;line-height:normal;height:auto;min-height:0;border:none;}
+.ProductMoreDetails.no-style a {text-decoration:underline;color:inherit;background-color:transparent;margin:0;padding:0;display:block;line-height:normal;font-size:inherit;font-weight:normal;}
+
+/* Discount */
+.ProductContainer1{position:absolute;z-index:100;font-size:0.875em;font-weight:bold;right:-5px;top:-5px;padding:8px;-webkit-box-shadow:0px 1px 4px 0px rgba(50,50,50,0.5);-moz-box-shadow:0px 1px 4px 0px rgba(50,50,50,0.5);box-shadow:0px 1px 4px 0px rgba(50,50,50,0.5);}
+.Product .ProductContainer1 div {vertical-align:middle;display:inline-block;}
+
+/* Product title */
+.ProductTitle {font-size:0.875em;position:relative;overflow:hidden;padding:5px 0;margin:0;line-height:1.25em;overflow:hidden;}
+
+.ProductIntroduction {font-size:1em;padding:0;text-align:left;font-weight:normal;overflow:hidden;}
+
+.ProductNumber {position:relative;overflow:hidden;padding:3px 0;text-align:left;}
+
+/* Product pricing */
+.ProductPriceContainer {position:relative;min-height:1px;padding:0 8px;overflow:hidden;vertical-align:bottom;}
+.ProductPriceContainer a {display:inline!important;}
+.ProductContainer2 {min-height:1px;vertical-align:bottom;padding:0 8px 8px 8px;}
+.Product .ProductContainer2 .ProductIcons + .ProductMoreDetails {position:static;float:left;}
+
+.ProductPriceOriginal {margin-right:5px;text-decoration:line-through;font-size:0.9375em;display:inline-block;}/* old price */
+.ProductPrice {clear:left;font-size:0.9375em;font-weight:normal;display:inline-block;} /* current price */
+.ProductPriceCalculated {font-size:0.9375em;font-weight:normal;display:inline-block;} /* discounted price */
+.ProductCurrencySymbol {font-size:0.9375em;vertical-align:baseline;padding-right:3px;}
+.ProductPriceOriginal .ProductCurrencySymbol {font-size:1em;}
+.ProductPriceOtherInformation {line-height:1.5em;font-size:0.6875em;margin:3px 0 5px 0;display:inline;}
+.ProductPriceOtherInformation *:empty {display:none;}
+.ProductPriceOtherInformationPart * {white-space:nowrap;}
+.ProductPriceOtherInformationPart::before {content:"|";margin-right:4px;display:inline;}
+:nth-of-type(1).ProductPriceOtherInformationPart::before {content:"";display:none;}
+.ProductPriceOtherInformation .ProductIncTaxes {display:inline-block;}
+.ProductPriceOtherInformation .ProductIncTaxes:empty {display:none;}
+.ProductPriceOtherInformation .ProductPriceTax {clear:left;display:block;}
+.ProductIncTaxes + .ProductWeight::before, .ShippingChargeForProduct + .ProductWeight::before {content:"("!important;display:inline-block!important;margin-right:0;}
+.ProductIncTaxes + .ProductWeight::after, .ShippingChargeForProduct + .ProductWeight::after {content:")";}
+.ProductDiscountMessage {font-weight:normal;margin:5px 10px;padding:2px;}
+.ProductPriceOriginal:empty, .ProductPrice:empty, .ProductPriceCalculated:empty  {display:none;}
+
+/* Buttons */
+.ProductContainer3 {padding:0 8px;}
+.QntyBox input {font-size:0.9375em;}
+.ProductQuantityUnit {font-size:.75em;}
+.AddToBasketQnty {border-width:1px;border-style:solid;}
+.AddToBasketButton {font-size:0.75em;font-weight:bold;border-style:solid;border-width:1px;}
+.AddToBasketButton .ImgLink [class^='icon-'] {font-size:1.2em;}
+.FavoritesButton {font-size:1em;font-weight:bold;border-style:solid;border-width:1px;}
+
+#ProductLoopInner{overflow:hidden;margin:0 auto!important;padding:0 5px;box-sizing:border-box;float:none;display: table-cell;}
+
+@media all and (min-width:965px) and (max-width:1240px){
+}
+@media all and (min-width:768px) and (max-width:964px){
+}
+@media all and (max-width:964px){
+    #SideBar_R ~ #ProductLoop{width: 100% !important;}
+}
+@media all and (max-width:768px){
+	body {font-size: 100%;}
+	.Product {width:100%;margin:10px auto;padding:0 10px;}
+	.ProductPriceOtherInformation {font-size: 1em;}
+	.ThemeVersion-11 .ImgLink{margin: 0 auto;}
+}
+
+@media all and (max-width: 480px){
+}
+
+
+@media all and (min-width:320px) and (max-width:505px){
+#ProductLoop {text-align: center;}
+#ProductLoop .Product {margin: 5px !important;max-width: 45% !important;padding: 5px !important;float: none;display: inline-block;}
+.Product .ProductTitle {font-size: 1.1em;}
+.Product .ProductPrice {font-size: 1.075em;}
+.Product .ProductImageContainer {padding-bottom: 10px;}    
+}
+@media all and (min-width:506px) and (max-width:767px){
+#ProductLoop {text-align: center;}      
+#ProductLoop .Product {
+	margin: 10px !important;
+	max-width: 50% !important;
+	padding: 10px !important;
+	display: inline-block;
+	width: 45% !important;
+    float: none;
+}
+.Product .ProductTitle {font-size: 1.3em;}
+.Product .ProductPrice {font-size: 1.375em;}
+.Product .ProductImageContainer {padding-bottom: 10px;}    
+}
+@media all and (min-width:768px) and (max-width:964px){
+.Product .ProductTitle {font-size: 1.3em;}  
+}
+ 
+@media all and (min-width:320px) and (max-width:767px){
+#ProductLoop {
+	text-align: center;
+	margin: auto;
+	max-width: 100%;
+	width: 100% !important;
+}
+.ProductImageContainer {
+	margin: 0px 0px 15px 0px;
+}    
+}
+@media (max-width: 414px){
+    #ProductLoop .Product {
+        margin: 0 auto 30px auto !important;
+        width: 90% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        float: none;
+    }
+}
+
+/*
+Version tag, please don't remove
+$Revision: 45191 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V14_50/bin/SFXTemplates/ProductLoops/SFX-LITE_1/stylesheet.css $
+*/

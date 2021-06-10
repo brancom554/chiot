@@ -1,0 +1,86 @@
+.Breadcrumbs #SwitchCurrency {position:relative;right:5px;float:right;text-align:right;}
+.Breadcrumbs #SwitchCurrency a {background:transparent;text-decoration:none;white-space:nowrap;}
+
+#PageContainer11 {position:relative;display:inline-block;width:100%;}
+#PageContainer1 {position:relative;float: left; width: 100%;margin-top: 15px; box-sizing: border-box;}
+#PageContainer3 {position:relative;clear:right;}
+
+#idxSubpageNavigation {display:inline-block;vertical-align:top;min-width:0;width:250px;position:relative;z-index:1;}
+#idxSubpageNavigation:empty {display:none;}
+#idxSubpageNavigation + #Content {width:calc(1170px - 250px);min-width:0!important;display:inline-block;}
+#idxSubpageNavigation:empty + #Content {display:block;width:100%;}
+#SideBar_L {padding-right:15px;margin-top:15px;}
+#SideBar_R {display:block;border-width:0px;border-style:solid;float:right;width:200px;margin-top:15px;padding-left:15px;box-sizing:border-box;}
+#SideBar_L .idx2Submenu{padding-top: 10px;}
+#SideBar_R .idx2Submenu{padding-top: 10px;}
+
+.PageImage {margin:10px 0 10px 10px;float:right;border: 0;}
+.PageImageCaption { text-align:right;padding:0 3px;}
+
+.PageTitle {font-size:1.5em;margin:0 0 0 0;padding:.25em 0;font-weight:bold;line-height:1.2em;word-wrap:break-word;border-width:0px;border-style:solid;}
+.PageIntroduction {font-size:1.125em;margin:5px 0 0 0;padding:.25em 0;line-height:1.5em;word-wrap:break-word;border-width:0px;border-style:solid;}
+.PageIntroduction a {text-decoration:underline;}
+.PageDescription {font-size:1em;margin:5px 0 0 0;padding:.25em 0;line-height:1.5em;word-wrap:break-word;border-width:0px;border-style:solid;}
+.PageDescription a {text-decoration:underline;}
+
+
+.Product { clear:both;}
+
+/* Page html code */
+.PageCodeTop, .PageCodeBottom {padding:10px;}
+.PageCodeSnippetArea1, .PageCodeSnippetArea2, .PageLinkBoxTop, .PageLinkBoxBottom {margin:5px;}
+
+/* BEGIN: ContactUs page specific*/
+#PageContactUsContainer{margin-top:10px;padding:0 10px 10px 10px;}
+.Addressformat {text-align:left;line-height:130%;width:100%;overflow-x:auto;}
+.Addressformat ul,.Addressformat li {margin:0;padding:0;list-style:none;}
+.Addressformat li {padding:.25em 0px;word-wrap:break-word;background-color:transparent;}
+.Addressformat li a {background-color:transparent;text-decoration:underline;}
+.Addressformat li:first-child {margin-bottom:.25em;}
+.Addressformat li:last-child {padding-bottom:10px;}
+.Addressformat li span {font-weight:bold;display:block;}
+.Addressformat li span + span {margin-left:1em;}
+.AddressformatTitle {font-weight:bold;border-bottom-width:1px;border-bottom-style:solid;}
+.AddressformatTitle span {display:none;}
+/* END: ContactUs page specific */
+
+/* BEGIN: Basket page specific*/
+table#bsktbl td {padding:.5em;text-align:right;}
+table#bsktbl .ViewbasketHeader  {text-align:right;font-weight:bold;font-size:0.8125em;}
+table#bsktbl span[tag=I_], table#bsktbl span[tag=T_] {text-align:left;display:block;}
+table#bsktbl .ViewbasketHeader span[tag=LD_TITLE] {display:block;text-align:left;font-weight:bold;}
+table#bsktbl #bsktbl_ttl td {font-weight:bold;font-size:0.8125em;}
+table#bsktbl .ViewbasketCkBox td {text-align:left ! important;}
+table#bsktbl .ViewbasketCkBox label {margin-left:.5em;}
+.DropDowns {width:180px;} /* Select fields for country and region */
+.ViewbasketRow2, .ViewbasketExtras {border-width:1px;border-style:solid;}
+.ViewbasketCheckOut {height:20px;margin:20px;padding:0;vertical-align:bottom;background-color:transparent;border:0;}
+/* END: Basket page specific */
+
+@media all and (min-width:1025px) and (max-width:1240px){
+	#idxSubpageNavigation{min-width:0!important;}
+    #idxSubpageNavigation {width: 200px;}
+	#idxSubpageNavigation + #Content {width:calc(940px - 200px);min-width:0!important;display:inline-block;}
+}
+@media all and (min-width:768px) and (max-width:1024px){
+	#idxSubpageNavigation{min-width:0!important;width:200px;}
+	#idxSubpageNavigation + #Content {width:calc(724px - 200px);min-width:0!important;display:inline-block;}
+}
+@media all and (max-width:767px){
+	#idxSubpageNavigation + #Content {display:block;min-width:inherit!important;}
+        .PageTitle {font-size:1.25em;margin:0;padding:.25em 10px;}
+        .PageIntroduction {font-size:1.125em;margin:5px 0 0 0;padding:.25em 10px;}
+}
+@media all and (max-width:635px){
+}
+
+@media screen and (min-width: 1880px) {
+    #idxSubpageNavigation + #Content {width: calc(1570px - 350px);}
+    #idxSubpageNavigation { width: 350px;}
+}
+
+/*
+Version tag, please don't remove
+$Revision: 39224 $
+$HeadURL: svn://3d3-p432/ShopFactory/branches/V12_00/bin/SFXTemplates/Themes/SFX-SHO-001_nemoW/Pages/SFX-Content_navLeft/stylesheet.css $
+*/
